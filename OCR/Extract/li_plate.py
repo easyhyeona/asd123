@@ -1,3 +1,5 @@
+import cv2
+import imutils
 
 def detectPlates(self):
 
@@ -49,7 +51,7 @@ def detectPlates(self):
             box = np.int0(cv2.cv.BoxPoints(rect)) if imutils.is_cv2() else cv2.boxPoints(rect)
 
             # if (aspectRatio > 2 and aspectRatio < 6) and h > self.minPlateH and w > self.minPlateW:
-            if 1000 < w * h and 2 < aspectRatio < 5):
+            if 1000 < w * h and 2 < aspectRatio < 5:
                 regions.append(box)
 
         return regions
